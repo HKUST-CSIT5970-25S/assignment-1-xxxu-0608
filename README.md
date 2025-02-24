@@ -17,30 +17,11 @@
 
     > Tool: The measurement tool I used is sysbench.
     >
-    > CPU Test Configuration:
-      Command: sysbench cpu --cpu-max-prime=20000 run
-      Description: This command tests the CPU performance by calculating prime numbers up to 20000. It will give you the total time taken to compute the primes and the rate of computation (prime numbers per second).
-      Why this configuration: The --cpu-max-prime parameter is set to 20000 to stress the CPU sufficiently without overwhelming it. A higher number will stress the CPU more, but 20000 is a balanced choice for general performance measurement.
-      Memory Test Configuration:
-      Command: sysbench memory --memory-block-size=1M --memory-total-size=10G run
-      Description: This command tests the memory performance by reading and writing 10 GB of data using a block size of 1 MB. It measures the memory transfer speed and latency.
-      Why this configuration: The block size is set to 1 MB to balance between memory read/write speed and testing overhead. The total memory size is set to 10 GB to test the system's ability to handle larger memory operations.
+    > CPU Test Configuration: The command is sysbench cpu --cpu-max-prime=20000 run. This command tests the CPU performance by calculating prime numbers up to 20000. It will give you the total time taken to compute the primes and the rate of computation (prime numbers per second). The --cpu-max-prime parameter is set to 20000 to stress the CPU sufficiently without overwhelming it. A higher number will stress the CPU more, but 20000 is a balanced choice for general performance measurement.
+    > 
+    > Memory Test Configuration: The command is sysbench memory --memory-block-size=1M --memory-total-size=10G run. This command tests the memory performance by reading and writing 10 GB of data using a block size of 1 MB. It measures the memory transfer speed and latency. The block size is set to 1 MB to balance between memory read/write speed and testing overhead. The total memory size is set to 10 GB to test the system's ability to handle larger memory operations.
     >
-    > Measurement Results Explanation:
-      CPU Performance: The result from sysbench cpu will report the time taken to compute prime numbers and the rate at which the calculations were completed. A lower time means better CPU performance, and a higher rate indicates better CPU efficiency.
-      Memory Performance: The result from sysbench memory will show the transfer speed and the time taken for the memory operation. Higher speed values indicate better memory throughput.
-
-    > Command: sysbench cpu --cpu-max-prime=20000 run
-    > Description: This command tests the CPU performance by calculating prime numbers up to 20000. It will give you the total time taken to compute the primes and the rate of computation (prime numbers per second).
-    > Why this configuration: The --cpu-max-prime parameter is set to 20000 to stress the CPU sufficiently without overwhelming it. A higher number will stress the CPU more, but 20000 is a balanced choice for general performance measurement.
-    > Memory Test Configuration:
-    > Command: sysbench memory --memory-block-size=1M --memory-total-size=10G run
-    > Description: This command tests the memory performance by reading and writing 10 GB of data using a block size of 1 MB. It measures the memory transfer speed and latency.
-    > Why this configuration: The block size is set to 1 MB to balance between memory read/write speed and testing overhead. The total memory size is set to 10 GB to test the system's ability to handle larger memory operations.
-    >
-    > Measurement Results Explanation:
-    > CPU Performance: The result from sysbench cpu will report the time taken to compute prime numbers and the rate at which the calculations were completed. A lower time means better CPU performance, and a higher rate indicates better CPU efficiency.
-    > Memory Performance: The result from sysbench memory will show the transfer speed and the time taken for the memory operation. Higher speed values indicate better memory throughput.
+    > Measurement Results Explanation: The result from sysbench cpu will report the time taken to compute prime numbers and the rate at which the calculations were completed. A lower time means better CPU performance, and a higher rate indicates better CPU efficiency. The result from sysbench memory will show the transfer speed and the time taken for the memory operation. Higher speed values indicate better memory throughput.
 
 2. (1 mark) Run your measurement tool on general purpose `t2.micro`, `t2.medium`, and `c5d.large` Linux instances, respectively, and find the performance differences among these instances. Launch all the instances in the **US East (N. Virginia)** region. Does the performance of EC2 instances increase commensurate with the increase of the number of vCPUs and memory resource?
 
